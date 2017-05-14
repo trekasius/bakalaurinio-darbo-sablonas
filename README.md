@@ -32,7 +32,9 @@ nurodyti galima per paketo `hyperref` nustatymus. Universiteto herbas ant
 viršelio ir kiti darbe naudojami paveiksliukai turi būti `/figures` kataloge.
 
 Su standartiniu [MikTex](http://miktex.org/) `pdflatex` šį šabloną sukompiliuoja
-be klaidų: ` 0 error(s), 0 warning(s), 0 overfull box(es), 0 underfull box(es)`
+be klaidų: 
+
+` 0 error(s), 0 warning(s), 0 overfull box(es), 0 underfull box(es)`
 
 **Kai kurie dalykai nepadaryti:**
 
