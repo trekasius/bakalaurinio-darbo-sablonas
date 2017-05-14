@@ -45,4 +45,4 @@ be klaidų:
 ## Pabaigai 
 
 Šis šablonas platinamas laisvai ir be jokių apribojimų, tačiau būtų malonu,
-jeigu informuotumėte  autorių, kad jį kažkur naudojate.
+jeigu informuotumėte  autorių, kad šį LaTeX šabloną kažkur naudojate.
