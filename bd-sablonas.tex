@@ -1,0 +1,400 @@
+\documentclass[a4paper, 12pt]{article}
+
+% ------------------------------------------------------------------------------
+%
+%        VGTU FMF MSK BAKALAURINIO DARBO ŠABLONAS
+%        Pagrindinių paketų rinkinys, viršelis ir bazinė dokumento struktūra
+%
+%        Autorius: Tomas Rekašius      tomas.rekasius@vgtu.lt
+%
+%         Sukurta: 2015-05-28
+%       Pataisyta: 2017-05-14
+%         Versija: 1.1
+%
+
+% ------------------------------------------------------------------------------
+%  PREAMBULĖ
+% ------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}            % naudojama, kai .tex failas UTF-8 koduotės
+\usepackage[L7x]{fontenc}              % nurodoma lietuviško teksto koduotė Latin-7
+\usepackage[lithuanian]{babel}         % nurodoma, kad dokumentas yra lietuviškas
+
+\usepackage{lmodern}                   % dokumente naudojamas šriftas Latin Modern
+\usepackage{microtype}                 % optimizuojami atstumai tarp raidžių žodyje
+\usepackage{indentfirst}               % atitraukiama pirmoji naujo skyriaus eilutė
+\usepackage{icomma}                    % po kablelio skaičiaus viduryje nebus tarpo
+\usepackage{amsmath, amssymb, amsthm}  % matematiniai simboliai ir konstrukcijos
+\usepackage{graphicx}                  % grafinių failų įterpimas ir kiti nustatymai
+\usepackage{booktabs}                  % reikalingas tvarkingoms lentelėms sudaryti
+\usepackage{caption}                   % paveiksliukų ir lentelių užrašų formavimas
+\usepackage{geometry}                  % paraščių ir kitų lapo parametrų nustatymai
+\usepackage{hyperref}                  % interaktyvioms nuorodoms dokumente sukurti
+
+
+\geometry{      left = 2.5cm,          % paketo geometry parametrų nustatymai
+               right = 2.0cm, 
+                 top = 2.0cm, 
+              bottom = 2.0cm
+}
+
+\captionsetup{format = hang,           % paketo caption parametrų nustatymai
+           labelfont = bf,
+           tablename = lentelė,
+          figurename = pav,  
+            labelsep = period
+}
+
+\hypersetup{ unicode = true,           % paketo hyperref parametrų nustatymai
+         linktocpage = false, 
+          colorlinks = true, 
+           linkcolor = red,
+           citecolor = blue,
+            pdftitle = {VGTU FMF MSK bakalaurinio darbo šablonas},
+           pdfauthor = {Tomas Rekašius}
+}
+
+
+% PAPILDOMI PAKETAI IR NUSTATYMAI ----------------------------------------------
+
+\usepackage{titlesec}                  % leidžia keisti skyriaus pavadinimo stilių
+\titlelabel{\thetitle.\quad}           % dedamas taškas po skyriaus numeriu tekste
+
+\let\tocnumdot\numberline              % uždeda tašką po skyriaus numeriu turinyje
+\def\numberline#1{\tocnumdot{#1.}}     
+
+
+\linespread{1.3}                       % nustatomas 1,5 dydžio tarpas tarp eilučių
+
+\graphicspath{{figures/}}              % nustatome kelią iki paveiksliukų katalogo 
+
+
+% ------------------------------------------------------------------------------
+%  DOKUMENTO PRADŽIA
+% ------------------------------------------------------------------------------
+\begin{document}
+
+
+% ------------------------------------------------------------------ VIRŠELIS --
+
+\begin{titlepage}
+\setcounter{page}{-2}
+\centering
+%
+\includegraphics[scale = 0.6]{vgtu_herbas}\\[0.5\baselineskip]
+%
+{\Large\scshape Vilniaus Gedimino Technikos Universitetas}\\[0.2\baselineskip]
+{\large\scshape Fundamentinių mokslų fakultetas}\\[0.2\baselineskip]
+{\large\scshape Matematinės statistikos katedra}\\[0.2\baselineskip]
+%
+\vspace{\fill}
+%
+{\Large Justina Marcinkėnaitė}\\[3.0\baselineskip]
+
+\MakeUppercase{\Large\bfseries Statistinė inkstų veiklos sutrikimo analizė}\\[0.3\baselineskip]
+{\Large The statistical analysis of renal dysfunction}\\[1.0\baselineskip]
+
+{\Large Baigiamasis bakalauro darbas}
+
+\vspace{\fill}
+
+Taikomosios statistikos ir ekonometrijos studijų programa, valstybinis kodas 612G31001
+
+Statistikos studijų kryptis
+
+
+\vspace{\fill}
+%
+Vilnius, \the\year
+\end{titlepage}
+
+
+% ----------------------------------------------------------------- TITULINIS --
+
+\begin{titlepage}
+\setcounter{page}{-1}
+\centering
+%
+{\Large\scshape Vilniaus Gedimino Technikos Universitetas}\\[0.2\baselineskip]
+{\large\scshape Fundamentinių mokslų fakultetas}\\[0.2\baselineskip]
+{\large\scshape Matematinės statistikos katedra}\\[0.2\baselineskip]
+%
+\vspace{\fill}
+%
+\begin{flushright}
+\parbox{6cm}{%
+TVIRTINU\\Katedros vedėjas
+\bigskip
+\begin{center}
+\hrule\medskip
+{\footnotesize (Parašas)}\\[\baselineskip]
+\hrule\medskip
+{\footnotesize (Vardas, pavardė)}\\[\baselineskip]
+\hrule\medskip
+{\footnotesize (Data)}
+\end{center}
+}
+\end{flushright}
+%
+\vspace{\fill}
+%
+{\Large Justina Marcinkėnaitė}\\[3.0\baselineskip]
+
+\MakeUppercase{\Large\bfseries Statistinė inkstų veiklos sutrikimo analizė}\\[0.3\baselineskip]
+{\Large The statistical analysis of renal dysfunction}\\[1.0\baselineskip]
+
+{\Large Baigiamasis bakalauro darbas}
+
+\vspace{\fill}
+
+Taikomosios statistikos ir ekonometrijos studijų programa, valstybinis kodas 612G31001
+
+Statistikos studijų kryptis
+
+\vspace{\fill}
+%
+\begin{minipage}[t]{0.15\textwidth}
+\bfseries Vadovas
+\end{minipage}
+%
+\hspace{\fill}
+%
+\begin{minipage}[t]{0.4\textwidth}
+\centering\hrule\medskip\scriptsize (Pedagoginis vardas, vardas, pavardė)
+\end{minipage}
+%
+\hspace{\fill}
+%
+\begin{minipage}[t]{0.2\textwidth}
+\centering\hrule\medskip\scriptsize (Parašas)
+\end{minipage}
+%
+\hspace{\fill}
+%
+\begin{minipage}[t]{0.15\textwidth}
+\centering\hrule\medskip\scriptsize (Data)
+\end{minipage}
+
+
+\vspace{\fill}
+%
+Vilnius, \the\year
+\end{titlepage}
+
+
+% ------------------------------------------------------------------- TURINYS --
+\tableofcontents
+\newpage
+
+
+% ----------------------------------------------------------------- SANTRAUKA --
+\section*{Santrauka}
+\phantomsection
+\addcontentsline{toc}{section}{Santrauka}
+%
+Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi 
+auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, 
+ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat 
+ligula aliquet magna, vitae ornare odio metus a mi. Morbi ac orci et nisl 
+hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque a nulla. 
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur 
+ridiculus mus. Aliquam tincidunt urna. Nulla ullamcorper vestibulum turpis. 
+Pellentesque cursus luctus mauris.
+%
+\paragraph{Darbo aktualumas.} Quisque ullamcorper placerat ipsum. Cras nibh. 
+Morbi vel justo vitae lacus tincidunt ultrices. Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit. In hac habitasse platea dictumst. Integer tempus 
+convallis augue. Etiam facilisis. Nunc elementum fermentum wisi. Aenean 
+placerat. Ut imperdiet, enim sed gravida sollicitudin, felis odio placerat 
+quam, ac pulvinar elit purus eget enim. Nunc vitae tortor. Proin tempus nibh 
+sit amet nisl. Vivamus quis tortor vitae risus porta vehicula.
+%
+\paragraph{Tikslas.} Morbi fringilla, wisi in dignissim interdum, justo 
+lectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor ligula 
+sed lacus
+%
+\paragraph{Uždaviniai.} Maecenas eget erat in sapien mattis porttitor:
+%
+\begin{enumerate}
+  \addtolength{\itemsep}{-0.5\baselineskip} 
+  \item vestibulum luctus nibh at lectus,
+  \item duis cursus enim ut augue,
+  \item quisque egestas wisi eget nunc.
+\end{enumerate}
+
+Sed bibendum, nulla a faucibus semper, leo velit ultricies tellus, ac 
+venenatis arcu wisi vel nisl. Vestibulum diam. Aliquam pellentesque, augue 
+quis sagittis posuere, turpis lacus congue quam, in hendrerit risus eros eget 
+felis. Maecenas eget erat in sapien mattis porttitor. Vestibulum porttitor. 
+Nulla facilisi. Sed a turpis eu lacus commodo facilisis. Morbi fringilla, 
+wisi in dignissim interdum, justo lectus sagittis dui, et vehicula libero dui 
+cursus dui.
+%
+%
+\newpage
+% -------------------------------------------------------------------- ĮVADAS --
+\section*{Įvadas}
+\phantomsection
+\addcontentsline{toc}{section}{Įvadas}
+%
+Nulla malesuada porttitor diam. Donec felis erat, congue non, volutpat at, 
+tincidunt tristique, libero. Vivamus viverra fermentum felis. Donec nonummy 
+pellentesque ante. Phasellus adipiscing semper elit. Proin fermentum massa ac 
+quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. 
+Maecenas lacinia. Nam ipsum ligula, eleifend at, accumsan nec, suscipit a, 
+ipsum. Morbi blandit ligula feugiat magna. Nunc eleifend consequat lorem. Sed 
+lacinia nulla vitae enim. 
+
+Quisque ullamcorper placerat ipsum. Cras nibh. Morbi vel justo vitae lacus 
+tincidunt ultrices. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+In hac habitasse platea dictumst. Integer tempus convallis augue. Etiam 
+facilisis. Nunc elementum fermentum wisi. Aenean placerat. Ut imperdiet, enim 
+sed gravida sollicitudin, felis odio placerat quam, ac pulvinar elit purus 
+eget enim. 
+
+Fusce mauris. Vestibulum luctus nibh at lectus. Sed bibendum, nulla a 
+faucibus semper, leo velit ultricies tellus, ac venenatis arcu wisi vel nisl. 
+Vestibulum diam. Aliquam pellentesque, augue quis sagittis posuere, turpis 
+lacus congue quam, in hendrerit risus eros eget felis. Maecenas eget erat in 
+sapien mattis porttitor. Vestibulum porttitor. Nulla facilisi. Sed a turpis 
+eu lacus commodo facilisis. Morbi fringilla, wisi in dignissim interdum, 
+justo lectus sagittis dui, et vehicula libero dui cursus dui. Mauris tempor 
+ligula sed lacus. 
+%
+%
+\newpage
+% ------------------------------------------------------------------- SKYRIUS --
+\section{Pirmas skyrius}
+%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, 
+vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida 
+mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. 
+Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus 
+et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra 
+metus rhoncus sem.  
+
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget 
+sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada 
+eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper nulla. Donec 
+varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis 
+quis, diam. Duis eget orci sit amet orci dignissim rutrum.
+%
+\subsection{Pirmo skyriaus skyrelis}
+%
+Nulla malesuada porttitor diam. Donec felis erat, congue non, volutpat at, 
+tincidunt tristique, libero. Vivamus viverra fermentum felis. Donec nonummy 
+pellentesque ante. Phasellus adipiscing semper elit. Proin fermentum massa ac 
+quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. 
+Maecenas lacinia. 
+%
+\subsubsection{Pirmo skyriaus skyrelio poskyris}
+%
+Nunc eleifend consequat lorem. Sed lacinia nulla vitae enim. Pellentesque 
+tincidunt purus vel magna. Integer non enim. Praesent euismod nunc eu purus. 
+Donec bibendum quam in tellus. Nullam cursus pulvinar lectus. Donec et mi. 
+Nam vulputate metus eu enim. Vestibulum pellentesque felis eu massa.
+%
+\paragraph{Pirmo skyriaus skyrelio poskyrio paragrafas.} 
+%
+Sed lacinia nulla vitae enim. Pellentesque tincidunt purus vel magna. Integer 
+non enim. Praesent euismod nunc eu purus. Donec bibendum quam in tellus. 
+Nullam cursus pulvinar lectus. Donec et mi. Nam vulputate metus eu enim. 
+Vestibulum pellentesque felis eu massa.
+%
+%
+% ------------------------------------------------------------------- SKYRIUS --
+\section{Antras skyrius}
+%
+Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi 
+auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, 
+ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat 
+ligula aliquet magna, vitae ornare odio metus a mi. Morbi ac orci et nisl 
+hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque a nulla. 
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur 
+ridiculus mus. Aliquam tincidunt urna. Nulla ullamcorper vestibulum turpis. 
+Pellentesque cursus luctus mauris.
+%
+\subsection{Antro skyriaus skyrelis}
+%
+Praesent eget sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor 
+nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper 
+nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan 
+eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum. 
+Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi 
+auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, 
+ultricies et, tellus. 
+%
+\subsubsection{Antro skyriaus skyrelio poskyris}
+%
+Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna, vitae 
+ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis. Suspendisse 
+ut massa. Cras nec ante. Pellentesque a nulla. Cum sociis natoque penatibus 
+et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tincidunt 
+urna. Nulla ullamcorper vestibulum turpis. Pellentesque cursus luctus mauris.
+%
+\paragraph{Antro skyriaus skyrelio poskyrio paragrafas.}
+%
+Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer 
+id, vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant 
+morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum 
+urna fringilla ultrices. 
+%
+%
+\newpage
+% ------------------------------------------------------------------- IŠVADOS --
+\section*{Išvados}
+\phantomsection
+\addcontentsline{toc}{section}{Išvados}
+%
+Nulla malesuada porttitor diam. Donec felis erat, congue non, volutpat at, 
+tincidunt tristique, libero. Vivamus viverra fermentum felis. Donec nonummy 
+pellentesque ante. Phasellus adipiscing semper elit. Proin fermentum massa ac 
+quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. 
+Maecenas lacinia. Nam ipsum ligula, eleifend at, accumsan nec, suscipit a, 
+ipsum. Morbi blandit ligula feugiat magna. Nunc eleifend consequat lorem. Sed 
+lacinia nulla vitae enim. 
+%
+\begin{enumerate}
+  \addtolength{\itemsep}{-0.5\baselineskip} 
+  \item Vestibulum luctus nibh at lectus sed bibendum, nulla a faucibus semper. 
+        Leo velit ultricies tellus, ac venenatis arcu wisi vel nisl. Vestibulum 
+        diam. Aliquam pellentesque, augue quis sagittis posuere, turpis lacus 
+        congue quam, in hendrerit risus eros eget felis. 
+  \item Duis cursus enim ut augue, maecenas eget erat in sapien mattis porttitor. 
+        Vestibulum porttitor. Nulla facilisi. Sed a turpis eu lacus commodo 
+        facilisis. Morbi fringilla, wisi in dignissim interdum, justo lectus 
+        sagittis dui, et vehicula libero dui cursus dui.
+  \item Quisque egestas wisi eget nunc mauris tempor ligula sed lacus. Duis 
+        cursus enim ut augue. Cras ac magna. Cras nulla. Nulla egestas. 
+        Curabitur a leo. Quisque egestas wisi eget nunc. Nam feugiat lacus vel 
+        est. Curabitur consectetuer.
+\end{enumerate}
+%
+%
+\newpage
+% ---------------------------------------------------------------- LITERATŪRA --
+\phantomsection
+\addcontentsline{toc}{section}{Literatūra}
+
+% Bibliografija nėra įprastas skyrius, todėl į LaTeX dokumento turinį neįtraukiama. 
+% Norint, kad bibliografija būtų įtraukiama į turinį, tenka sukurti fiktyvų skyrių 
+% ir nurodyti, kaip jis bus atvaizduojamas turinyje.
+
+\begin{thebibliography}{99}
+\bibitem{tob} 
+Tobias Oetiker. The Not So Short Introduction to \LaTeX2e{}. Or \LaTeX2e{} in 157 
+minutes. \href{http://tobi.oetiker.ch/lshort/lshort.pdf}{Version 5.06, June 20, 2016}.
+\end{thebibliography}
+%
+%
+\newpage
+% ------------------------------------------------------------------- PRIEDAI --
+\appendix
+\section{Priedai}
+
+
+\end{document}
+% ------------------------------------------------------------------------------
+%  DOKUMENTO PABAIGA
+% ------------------------------------------------------------------------------
